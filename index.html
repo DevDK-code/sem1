@@ -242,7 +242,25 @@
     </div>
     <!-- Audio element for click sound -->
     <audio id="clickSound" src="button-41.wav"></audio>
+    <!-- Hidden YouTube Player - Aapka Song -->
+    <iframe 
+        id="youtube-bg"
+        src="https://www.youtube.com/embed/xPSTwYJ5KCs?autoplay=1&loop=1&playlist=xPSTwYJ5KCs&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&mute=0&enablejsapi=1"
+        frameborder="0"
+        allow="autoplay; encrypted-media; accelerometer; gyroscope; picture-in-picture"
+        style="position:absolute; top:-9999px; left:-9999px; width:1px; height:1px; border:none;">
+    </iframe>
+
+    <!-- Agar autoplay block ho jaye toh ek click se start ho jayega -->
+
     <script>
+          // Pehli baar user click/tap karega toh sound hamesha ke liye unlock ho jayega
+        document.body.addEventListener("click", function enableAudio() {
+            var iframe = document.getElementById("youtube-bg");
+            iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+            iframe.contentWindow.postMessage('{"event":"command","func":"setVolume","args":[70]}', '*'); // volume 70% (optional)
+        }, { once: true });
+    
         // Existing semester card navigation
         const cards = document.querySelectorAll('.semester-card');
         cards.forEach(card => {
