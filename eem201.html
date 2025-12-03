@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEM-201 Course Materials</title>
+    <!-- CSS yahan nahi hai - tum alag se link kar sakte ho -->
+    <link rel="stylesheet" href="sem22.css">
+</head>
+
+<body>
+    <header>
+        <h1>EEM-201 Course Materials</h1>
+        <p>Programming for Problem Solving | Access all CTs, End-Sem, Notes, Books, Question Bank & more</p>
+    </header>
+    
+    <div class="semester-card">
+        <div class="heading">
+            <div class="heading_div">
+                <p id="heading_para">EEM-201</p>
+            </div>
+        </div>
+        
+        <div class="material_contentBox">
+            
+            <!-- Class Tests -->
+            <div class="material_item">
+                <p>Class Tests</p>
+                <ul>
+                    <li><a href="https://drive.google.com/drive/folders/1qYBt_gsYuytR4-i9mrOUjNaMTuxQs-2v?usp=drive_link">CT-1</a></li>
+                    <li><a href="https://drive.google.com/drive/folders/1hvrM_I10DeJQnHU40rIPy_DS7aDai2-o?usp=drive_link">CT-2</a></li>
+                    <li><a href="https://drive.google.com/drive/folders/1GhhdKZRJeP4fdQdTDU2uGO-YYFQQY46T">CT-1 (Backup)</a></li>
+                    <li><a href="https://drive.google.com/drive/folders/1Gsce5mUWSF_9NKhMD9cxQin4EJs-JKNl">CT-2 (Backup)</a></li>
+                </ul>
+            </div>
+            
+            <!-- End Semester -->
+            <div class="material_item">
+                <p>End Semester</p>
+                <ul>
+                    <li><a href="https://drive.google.com/drive/folders/1qqyuPHWpVk2UPZWj_UZpvpzkvZbZdgbO?usp=drive_link">End Semester Papers</a></li>
+                    <li><a href="https://drive.google.com/drive/folders/1Gyi4wK0Sd-wCts7r9BdPsLQ7VeDwKyfO">End Semester (Backup)</a></li>
+                </ul>
+            </div>
+            
+            <!-- Notes -->
+            <div class="material_item">
+                <p>Notes</p>
+                <ul>
+                    <li><a href="https://drive.google.com/drive/folders/1uw6tC7YpDnhyKFLA0e1c0ZhGtUH9GOY6?usp=drive_link">Complete Handwritten Notes</a></li>
+                </ul>
+            </div>
+            
+            <!-- Books -->
+            <div class="material_item">
+                <p>Recommended Books</p>
+                <ul>
+                    <li><a href="https://drive.google.com/file/d/1B5aPf2oVcw0QSqyx9vQgXvMhdpxMuCwo/view?usp=drivesdk">Programming in ANSI C - Reema Thareja</a></li>
+                    <li><a href="https://drive.google.com/file/d/1AzxDBFYvLAb_7tX4ShbCCelt0uOkSXpI/view?usp=drivesdk">The C Programming Language - Kernighan & Ritchie</a></li>
+                    <li><a href="https://drive.google.com/file/d/1BBUX0NyUgjjihsDw0x4dQ78KWaTHs7Ek/view?usp=drivesdk">Schaum's Outline of Programming with C</a></li>
+                </ul>
+            </div>
+            
+            <!-- Question Bank -->
+            <div class="material_item">
+                <p>Question Bank & Syllabus</p>
+                <ul>
+                    <li><a href="https://drive.google.com/drive/folders/1HNIeCmHgDcCKRld0dpukzI2QnY6DCiRD">Complete Question Bank + Syllabus</a></li>
+                    <li><a href="#" class="coming-soon">Previous Year Solutions (Coming Soon)</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script>
+        // Coming soon alert
+        document.querySelectorAll('.coming-soon').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('This resource is coming soon! Stay tuned ');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESC-281 Course Materials</title>
+    <!-- CSS head mein nahi hai – external file se link kar lena -->
+    <link rel="stylesheet" href="sem22.css">
+</head>
+
+<body>
+    <header>
+        <h1>ESC-281 Course Materials</h1>
+        <p>Engineering Mechanics | All Class Tests, Notes & Resources</p>
+    </header>
+    
+    <div class="semester-card">
+        <div class="heading">
+            <div class="heading_div">
+                <p id="heading_para">ESC-281</p>
+            </div>
+        </div>
+        
+        <div class="material_contentBox">
+            
+            <!-- Class Tests -->
+            <div class="material_item">
+                <p>Class Tests</p>
+                <ul>
+                    <li><a href="https://drive.google.com/drive/folders/1IBElgSHX7xz8ZTN3SUbz4a8W2OJZ5X5o">CT-1</a></li>
+                    <li><a href="https://drive.google.com/drive/folders/1II8jIj_gnZ3U13D8T7j48c8fFarREy63">CT-2</a></li>
+                </ul>
+            </div>
+            
+            <!-- Notes -->
+            <div class="material_item">
+                <p>Complete Notes</p>
+                <ul>
+                    <li><a href="https://drive.google.com/drive/folders/1I8hl9SIvx8WvRWtuAyE556n3tYH43jOk">All Units Handwritten Notes</a></li>
+                    <li><a href="#" class="coming-soon">Previous Year Papers (Coming Soon)</a></li>
+                    <li><a href="#" class="coming-soon">Question Bank (Coming Soon)</a></li>
+                </ul>
+            </div>
+            
+            <!-- Placeholder for future sections (optional) -->
+            <div class="material_item">
+                <p>Books & Reference</p>
+                <ul>
+                    <li><a href="#" class="coming-soon">R.C. Hibbeler (Coming Soon)</a></li>
+                    <li><a href="#" class="coming-soon">Beer & Johnston (Coming Soon)</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script>
+        // Coming soon alert
+        document.querySelectorAll('.coming-soon').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Ye resource jaldi hi add ho jayega! Stay tuned ');
+            });
+        });
+    </script>
+</body>
+
+</html>

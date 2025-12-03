@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEM-203 Course Materials</title>
+    <!-- CSS head mein nahi hai – bas external style.css link kar dena -->
+    <link rel="stylesheet" href="sem22.css">
+</head>
+
+<body>
+    <header>
+        <h1>MEM-203 Course Materials</h1>
+        <p>Machine Drawing & Design | Notes, Problem Sheets & Design Resources</p>
+    </header>
+    
+    <div class="semester-card">
+        <div class="heading">
+            <div class="heading_div">
+                <p id="heading_para">MEM-203</p>
+            </div>
+        </div>
+        
+        <div class="material_contentBox">
+            
+            <!-- Notes -->
+            <div class="material_item">
+                <p>Important Notes</p>
+                <ul>
+                    <li><a href="https://drive.google.com/file/d/1BMQtvqYhgitI5sG5fo7xN9tze-6q52eA/view?usp=drivesdk">Bearing Notes (Complete)</a></li>
+                    <li><a href="#" class="coming-soon">Shaft Design Notes (Coming Soon)</a></li>
+                    <li><a href="#" class="coming-soon">Gear Design Notes (Coming Soon)</a></li>
+                </ul>
+            </div>
+            
+            <!-- Problem Sheets / Design Problems -->
+            <div class="material_item">
+                <p>Problem Sheets & Drawings</p>
+                <ul>
+                    <li><a href="https://drive.google.com/file/d/1BR9vcRQ6bjEybBgiikdAiT3XE1QNuNa-/view?usp=drivesdk">Locking Devices Assembly</a></li>
+                    <li><a href="https://drive.google.com/file/d/12O6hmCEp8UZSjJpiLvn31e9z62z-jtRF/view?usp=drivesdk">Cross Head Assembly</a></li>
+                    <li><a href="https://drive.google.com/file/d/12PBiYCPA2pw6JWuocV7S3tOZv0-tGSuX/view?usp=drivesdk">Cotter Joint (Knuckle & Spigot)</a></li>
+                    <li><a href="#" class="coming-soon">Screw Jack (Coming Soon)</a></li>
+                    <li><a href="#" class="coming-soon">Plummer Block (Coming Soon)</a></li>
+                </ul>
+            </div>
+            
+            <!-- Future Sections (Optional - Ready for future) -->
+            <div class="material_item">
+                <p>Reference Books</p>
+                <ul>
+                    <li><a href="#" class="coming-soon">Machine Design – R.S. Khurmi (Coming Soon)</a></li>
+                    <li><a href="#" class="coming-soon">Shigley's Mechanical Engineering Design (Coming Soon)</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script>
+        // Coming soon alert
+        document.querySelectorAll('.coming-soon').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Ye resource jaldi hi add ho jayega!');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Roboto+Mono:wght@300;400;500&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #000;
+    color: #00ff41;
+    font-family: 'Roboto Mono', monospace;
+    min-height: 100vh;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 255, 100, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(0, 100, 255, 0.1) 0%, transparent 20%),
+        repeating-linear-gradient(0deg, rgba(0,255,50,0.03) 0px, transparent 2px, transparent 4px, rgba(0,255,50,0.03) 4px);
+    overflow-x: hidden;
+    padding: 20px 10px;
+    animation: flicker 8s infinite alternate;
+}
+
+@keyframes flicker {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.99; }
+}
+
+/* Terminal Scanline Effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(transparent 50%, rgba(0,255,50,0.02) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 9999;
+    animation: scan 8s linear infinite;
+}
+
+@keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Header - Pure Hacker Style */
+header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 30px;
+    border: 2px solid #00ff41;
+    border-image: linear-gradient(45deg, #00ff41, #00ffff) 1;
+    position: relative;
+    animation: pulse 4s infinite;
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: #00ff41;
+    text-shadow: 
+        0 0 10px #00ff41,
+        0 0 20px #00ff41,
+        0 0 40px #00ff41,
+        0 0 80px #00ff41;
+    letter-spacing: 8px;
+    animation: glitch 3s infinite;
+}
+
+header p {
+    color: #00ffff;
+    font-size: 1.3rem;
+    text-shadow: 0 0 10px #00ffff;
+    margin-top: 15px;
+}
+
+@keyframes glitch {
+    0%,100% { text-shadow: 2px 2px 0 #00ffff, -2px -2px 0 #ff0040; }
+    20% { text-shadow: -2px -2px 0 #00ffff, 2px 2px 0 #ff0040; }
+    40% { text-shadow: 2px -2px 0 #00ffff, -2px 2px 0 #ff0040; }
+}
+
+/* Main Card - Terminal Window */
+.semester-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(0, 20, 0, 0.9);
+    border: 2px solid #00ff41;
+    border-radius: 0;
+    box-shadow: 
+        0 0 30px rgba(0, 255, 65, 0.6),
+        inset 0 0 20px rgba(0, 255, 65, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.semester-card::before {
+    content: 'EEM-201 // ACCESS GRANTED';
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-family: 'Orbitron';
+    font-size: 1rem;
+    color: #00ff41;
+    letter-spacing: 3px;
+    z-index: 10;
+    animation: typing 4s steps(25) infinite;
+}
+
+.heading {
+    background: #001100;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 2px dashed #00ff41;
+}
+
+#heading_para {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #00ff41;
+    text-shadow: 0 0 30px #00ff41;
+    letter-spacing: 10px;
+}
+
+/* Content */
+.material_contentBox {
+    padding: 50px 40px;
+}
+
+.material_item {
+    margin-bottom: 35px;
+    padding: 25px;
+    border: 1px solid #00ff41;
+    background: rgba(0, 50, 0, 0.3);
+    position: relative;
+    transition: all 0.3s;
+}
+
+.material_item:hover {
+    background: rgba(0, 255, 100, 0.1);
+    box-shadow: 0 0 20px #00ff41;
+    transform: translateX(10px);
+}
+
+.material_item > p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.material_item a {
+    color: #00ff41;
+    text-decoration: none;
+    font-family: 'Roboto Mono';
+    display: block;
+    padding: 12px 0;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.material_item a::before {
+    content: '> ';
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.material_item a:hover {
+    color: #00ffff;
+    text-shadow: 0 0 15px #00ffff;
+    padding-left: 30px;
+}
+
+.material_item a:hover::before {
+    opacity: 1;
+}
+
+/* Coming Soon */
+.coming-soon {
+    color: #ff0040 !important;
+    cursor: not-allowed;
+}
+
+.coming-soon::before {
+    content: '[LOCKED] ';
+}
+
+/* Cursor Blink Effect */
+@keyframes typing {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+/* Blinking cursor for extra AI feel */
+header h1::after {
+    content: '_';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+    header h1 { font-size: 2.8rem; }
+    #heading_para { font-size: 2.5rem; }
+    .material_contentBox { padding: 30px 20px; }
+}

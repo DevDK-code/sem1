@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEM-2 // STUDY TECH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    
+ <link rel="stylesheet" href="sem2.css">
+</head>
+<body>
+
+    <!-- SOUNDS (free & safe) -->
+    <audio id="load"   src="1.wav" preload="auto"></audio>
+    <audio id="hover"  src="2.wav" preload="auto"></audio>
+    <audio id="click"  src="3.wav" preload="auto"></audio>
+    <audio id="access" src="4.wav" preload="auto"></audio>
+
+    <h1>STUDY TECH</h1>
+
+    <div class="nav">
+        <a href="/" onmouseover="play('hover')" onclick="play('click')">HOME</a>
+        <a href="https://forms.gle/69GyzmUoj1r8jLjB9" onmouseover="play('hover')" onclick="play('click')">UPLOAD</a>
+        <a href="/aboutus" onmouseover="play('hover')" onclick="play('click')">ABOUT US</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWdAyb0dwqDknw5AY6WEWIjiIrQCjcz63UmhTBPr4_RgZx4Q/viewform" onmouseover="play('hover')" onclick="play('click')">CONTACT</a>
+        <a href="/privacypolicy" onmouseover="play('hover')" onclick="play('click')">PRIVACY</a>
+    </div>
+
+    <hr>
+
+    <h2>SEMESTER 2 // ACCESS GRANTED</h2>
+
+    <ul>
+        <li onmouseover="play('access')"><a href="https://drive.google.com/file/d/1uTnDxHZYqWUD9UQbgJ3l4plAzga1_-r7/view?usp=drive_link">Syllabus + Question Bank</a></li>
+        <li onmouseover="play('access')"><a href="eem201.html">EEM201</a> COMPUTER CONCEPTS & C PROGRAMMING</li>
+        <li onmouseover="play('access')"><a href="eem202.html">EEM202</a> BASIC ELECTRICAL ENGINEERING</li>
+        <li onmouseover="play('access')"><a href="esc281.html">ESC281</a> ENVIRONMENTAL STUDIES</li>
+        <li onmouseover="play('access')"><a href="mam281.html">MAM281</a> ENGINEERING MATHEMATICS II</li>
+        <li onmouseover="play('access')"><a href="mem201.html">MEM201</a> ENGINEERING THERMODYNAMICS</li>
+        <li onmouseover="play('access')"><a href="mem202.html">MEM202</a> ENGINEERING MECHANICS</li>
+        <li onmouseover="play('access')"><a href="mem203.html">MEM203</a> ENGINEERING DRAWING II</li>
+        <li onmouseover="play('access')"><a href="mem204.html">MEM204</a></li>
+        <li onmouseover="play('access')"><a href="https://drive.google.com/drive/folders/1uXV2GUAXWA0aJ_0IL6EQzQG1ilB4uPWo?usp=drive_link">Workshop</a></li>
+        <li onmouseover="play('access')"><a href="phm281.html">PHM281</a> APPLIED PHYSICS II</li>
+        <li onmouseover="play('access')"><a href="https://drive.google.com/drive/folders/1XB9JpjlQ42h0r4kd61d03vWGywdnKnE0?usp=drive_link">PHM282</a> APPLIED PHYSICS LAB</li>
+    </ul>
+
+    <hr>
+
+    <div class="footer">
+        © 2077 STUDY TECH • ALL DATA ENCRYPTED • NO ARASAKA TRACKING • STAY SAFE CHOOM
+    </div>
+
+    <script>
+        // Page load sound
+        window.onload = () => document.getElementById('load').play();
+
+        // Sound function
+        function play(id) {
+            const sound = document.getElementById(id);
+            sound.currentTime = 0;
+            sound.play().catch(() => {}); // Chrome autoplay policy ke liye
+        }
+    </script>
+
+</body>
+</html>

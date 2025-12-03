@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEM-204 Workshop Practice</title>
+    <!-- CSS head mein nahi hai – bas external style.css link kar dena -->
+    <link rel="stylesheet" href="sem22.css">
+</head>
+
+<body>
+    <header>
+        <h1>MEM-204 Workshop Practice</h1>
+        <p>Complete Workshop File | All Jobs, Drawings & Viva Questions</p>
+    </header>
+    
+    <div class="semester-card">
+        <div class="heading">
+            <div class="heading_div">
+                <p id="heading_para">MEM-204</p>
+            </div>
+        </div>
+        
+        <div class="material_contentBox">
+            
+            <!-- Workshop File -->
+            <div class="material_item">
+                <p>Workshop Practice File</p>
+                <ul>
+                    <li><a href="https://drive.google.com/drive/folders/1LrfjJ4j6Bk1dCUdQZNkdN2n0jVIsw_zK">Complete Workshop File (All Jobs + Drawings)</a></li>
+                    <li><a href="#" class="coming-soon">Viva Questions PDF (Coming Soon)</a></li>
+                    <li><a href="#" class="coming-soon">Job Photos & Videos (Coming Soon)</a></li>
+                </ul>
+            </div>
+            
+            <!-- Future Sections (Ready for expansion) -->
+            <div class="material_item">
+                <p>Individual Jobs</p>
+                <ul>
+                    <li><a href="#" class="coming-soon">Fitting Job (Coming Soon)</a></li>
+                    <li><a href="#" class="coming-soon">Carpentry Job (Coming Soon)</a></li>
+                    <li><a href="#" class="coming-soon">Welding Job (Coming Soon)</a></li>
+                    <li><a href="#" class="coming-soon">Sheet Metal Work (Coming Soon)</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script>
+        // Coming soon alert
+        document.querySelectorAll('.coming-soon').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Ye resource jaldi hi upload ho jayega!');
+            });
+        });
+    </script>
+</body>
+
+</html>

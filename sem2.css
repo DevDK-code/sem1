@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEM-2 // STUDY TECH</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Roboto+Mono:wght@300;400;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #000;
+            color: #00ff41;
+            font-family: 'Roboto Mono', monospace;
+            min-height: 100vh;
+            padding: 30px 20px;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(0,255,100,0.15), transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(0,100,255,0.1), transparent 40%),
+                repeating-linear-gradient(90deg, rgba(0,255,65,0.03) 0px, transparent 2px, transparent 50px, rgba(0,255,65,0.03) 52px);
+            animation: bgShift 20s infinite linear;
+        }
+
+        @keyframes bgShift {
+            0% { background-position: 0 0, 0 0, 0 0; }
+            100% { background-position: 100px 100px, -100px -100px, 50px 0; }
+        }
+
+        /* Scanline + Flicker */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(transparent 50%, rgba(0,255,65,0.03) 50%);
+            background-size: 100% 4px;
+            pointer-events: none;
+            animation: scan 7s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,65,0.03) 2px, rgba(0,255,65,0.03) 4px);
+            pointer-events: none;
+            animation: flicker 4s infinite;
+        }
+
+        @keyframes flicker {
+            0%,100% { opacity: 0.99; }
+            50% { opacity: 0.97; }
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: #00ff41;
+            text-shadow: 
+                0 0 10px #00ff41,
+                0 0 30px #00ff41,
+                0 0 60px #00ff41;
+            letter-spacing: 10px;
+            margin-bottom: 20px;
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            0%,100% { text-shadow: 3px 0 #ff00ff, -3px 0 #00ffff; }
+            20% { text-shadow: -3px 0 #ff00ff, 3px 0 #00ffff; }
+            40% { text-shadow: 3px -3px #00ffff, -3px 3px #ff00ff; }
+        }
+
+        h1::after { content: '_'; animation: blink 0.7s infinite; }
+
+        @keyframes blink {
+            0%,100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        p, hr {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        p a {
+            color: #00ffff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            border: 1px solid #00ff41;
+            margin: 0 10px;
+            transition: all 0.3s;
+            position: relative;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        p a:hover {
+            background: #00ff41;
+            color: #000;
+            box-shadow: 0 0 20px #00ff41;
+            transform: translateY(-3px);
+        }
+
+        hr {
+            border: 1px dashed #00ff41;
+            box-shadow: 0 0 10px #00ff41;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            color: #00ffff;
+            text-shadow: 0 0 20px #00ffff;
+            margin: 50px 0 40px;
+            letter-spacing: 5px;
+        }
+
+        ul {
+            max-width: 900px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        li {
+            margin: 18px 0;
+            padding: 16px 20px;
+            background: rgba(0, 255, 65, 0.05);
+            border-left: 6px solid #00ff41;
+            border-right: 1px dashed #00ff41;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        li:hover {
+            transform: translateX(15px);
+            background: rgba(0, 255, 65, 0.15);
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.4);
+        }
+
+        li::before {
+            content: '> ACCESS:';
+            color: #00ff41;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        li a {
+            color: #00ff41;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-shadow: 0 0 10px #00ff41;
+            transition: all 0.3s;
+        }
+
+        li a:hover {
+            color: #00ffff;
+            text-shadow: 0 0 20px #00ffff;
+        }
+
+        /* Code highlight for subject codes */
+        li a[href$=".html"] {
+            color: #ff00ff;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 3px;
+        }
+
+        li a[href*="drive.google.com"] {
+            color: #ffff00;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 100px;
+            font-size: 1.2rem;
+            color: #00ff41;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.2rem; }
+            li a { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>STUDY TECH</h1>
+    
+    <p>
+        <a href="/">HOME</a> | 
+        <a href="https://forms.gle/69GyzmUoj1r8jLjB9">UPLOAD</a> | 
+        <a href="/aboutus">ABOUT US</a> | 
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWdAyb0dwqDknw5AY6WEWIjiIrQCjcz63UmhTBPr4_RgZx4Q/viewform">CONTACT</a> | 
+        <a href="/privacypolicy">PRIVACY</a>
+    </p>
+
+    <hr>
+
+    <h2>SEMESTER 2 // ACCESS GRANTED</h2>
+
+    <ul>
+        <li><a href="https://drive.google.com/file/d/1uTnDxHZYqWUD9UQbgJ3l4plAzga1_-r7/view?usp=drive_link">Syllabus + Question Bank</a></li>
+        <li><a href="eem201.html">EEM201</a> COMPUTER CONCEPTS & C PROGRAMMING</li>
+        <li><a href="eem202.html">EEM202</a> BASIC ELECTRICAL ENGINEERING</li>
+        <li><a href="esc281.html">ESC281</a> ENVIRONMENTAL STUDIES</li>
+        <li><a href="mam281.html">MAM281</a> ENGINEERING MATHEMATICS II</li>
+        <li><a href="mem201.html">MEM201</a> ENGINEERING THERMODYNAMICS</li>
+        <li><a href="mem202.html">MEM202</a> ENGINEERING MECHANICS</li>
+        <li><a href="mem203.html">MEM203</a> ENGINEERING DRAWING II</li>
+        <li><a href="mem204.html">MEM204</a> </li>
+        <li><a href="https://drive.google.com/drive/folders/1uXV2GUAXWA0aJ_0IL6EQzQG1ilB4uPWo?usp=drive_link">Workshop</a></li>
+        <li><a href="phm281.html">PHM281</a> APPLIED PHYSICS II </li>
+        <li><a href="https://drive.google.com/drive/folders/1XB9JpjlQ42h0r4kd61d03vWGywdnKnE0?usp=drive_link">PHM282</a> APPLIED PHYSICS LAB</li>
+    </ul>
+
+    <hr>
+
+    <div class="footer">
+        © 2077 STUDY TECH • ALL RESOURCES ENCRYPTED • NO CORP TRACKERS
+    </div>
+
+</body>
+</html>
