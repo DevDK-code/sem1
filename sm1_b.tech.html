@@ -5,142 +5,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B.Tech Semester 1</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #fff3b0, #f9d923);
-            /* Yellow gradient background */
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
+    
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&family=Roboto:wght@300;400&display=swap');
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background: linear-gradient(135deg, #0a001f, #1a0033, #000000);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 20px;
+        color: #e0e0ff;
+        font-family: 'Roboto', sans-serif;
+        overflow-x: hidden;
+    }
+    
+    header {
+        text-align: center;
+        margin-bottom: 60px;
+        z-index: 10;
+    }
+    
+    header h1 {
+        font-size: 3.5rem;
+        font-family: 'Exo 2', sans-serif;
+        font-weight: 800;
+        background: linear-gradient(90deg, #00ffff, #ff00ff, #00ff00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        letter-spacing: 6px;
+    }
+    
+    header p {
+        font-size: 1.3rem;
+        color: #b0b0ff;
+        max-width: 700px;
+        margin: 20px auto;
+        opacity: 0.85;
+    }
+    
+    .semester-card {
+        width: 90%;
+        max-width: 900px;
+        padding: 50px 40px;
+        background: rgba(20, 10, 40, 0.5);
+        backdrop-filter: blur(15px);
+        border: 2px solid rgba(0, 255, 255, 0.4);
+        border-radius: 30px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6),
+            0 0 40px rgba(0, 255, 255, 0.3);
+        transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    .semester-card:hover {
+        transform: translateY(-10px);
+        border: 2px solid #ff00ff;
+        box-shadow: 0 30px 60px rgba(255, 0, 255, 0.4),
+            0 0 60px rgba(0, 255, 255, 0.5);
+    }
+    
+    #heading_para {
+        font-size: 2.8rem;
+        font-family: 'Exo 2', sans-serif;
+        font-weight: 700;
+        text-align: center;
+        color: #00ffff;
+        text-shadow: 0 0 20px #00ffff;
+        margin-bottom: 50px;
+        letter-spacing: 3px;
+    }
+    
+    .contentbox {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 25px;
+        justify-items: center;
+    }
+    
+    .item {
+        background: rgba(30, 20, 60, 0.6);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 255, 255, 0.3);
+        border-radius: 20px;
+        padding: 25px 15px;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4),
+            0 0 20px rgba(0, 255, 255, 0.2);
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    .item:hover {
+        transform: translateY(-15px) scale(1.1);
+        background: rgba(60, 40, 120, 0.8);
+        border: 1px solid #ff00ff;
+        box-shadow: 0 20px 40px rgba(255, 0, 255, 0.4),
+            0 0 40px #00ffff;
+    }
+    
+    .item a {
+        text-decoration: none;
+        color: #00ffff;
+        font-size: 1.3rem;
+        font-weight: 600;
+        font-family: 'Exo 2', sans-serif;
+        text-shadow: 0 0 10px #00ffff;
+        transition: all 0.4s ease;
+    }
+    
+    .item a:hover {
+        color: #ff00ff;
+        text-shadow: 0 0 20px #ff00ff;
+    }
+    
+    @media (max-width: 768px) {
         header h1 {
-            font-size: 2.5rem;
-            color: #2d2d2d;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 2.8rem;
+            letter-spacing: 3px;
         }
         
         header p {
-            font-size: 1.2rem;
-            color: #4a4a4a;
-            max-width: 600px;
-            margin: 10px auto;
+            font-size: 1.1rem;
         }
         
         .semester-card {
-            background: #fff3b0;
-            /* Light yellow card */
-            border-radius: 100px;
-            /* Elliptical shape */
-            width: 90%;
-            max-width: 600px;
-            padding: 30px;
-            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2),
-                -10px -10px 20px rgba(255, 255, 255, 0.7);
-            /* Neomorphism */
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-        
-        .semester-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 12px 12px 25px rgba(0, 0, 0, 0.3),
-                -12px -12px 25px rgba(255, 255, 255, 0.8);
-            background: linear-gradient(45deg, #ffb703, #ffdd00);
-            /* Hover gradient */
-        }
-        
-        .heading_div {
-            margin-bottom: 20px;
+            padding: 40px 20px;
+            border-radius: 25px;
         }
         
         #heading_para {
-            font-size: 2rem;
-            color: #2d2d2d;
-            font-weight: 600;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
         }
         
         .contentbox {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
-            justify-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
         }
         
         .item {
-            background: #fff3b0;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15),
-                -5px -5px 10px rgba(255, 255, 255, 0.6);
-            transition: all 0.3s ease;
-        }
-        
-        .item:hover {
-            transform: scale(1.05);
-            box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.2),
-                -7px -7px 15px rgba(255, 255, 255, 0.7);
-            background: #ffdd00;
-            /* Bright yellow on hover */
+            padding: 20px 10px;
         }
         
         .item a {
-            text-decoration: none;
-            color: #2d2d2d;
+            font-size: 1.1rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .contentbox {
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        }
+        
+        .item a {
             font-size: 1rem;
-            font-weight: 500;
         }
-        
-        .item a:hover {
-            color: #4a4a4a;
-        }
-        
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            
-            header p {
-                font-size: 1rem;
-            }
-            
-            .semester-card {
-                padding: 20px;
-            }
-            
-            #heading_para {
-                font-size: 1.5rem;
-            }
-            
-            .contentbox {
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-                gap: 10px;
-            }
-            
-            .item {
-                padding: 10px;
-            }
-            
-            .item a {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
-</head>
+    }
+</style></head>
 
 <body>
     <header>
