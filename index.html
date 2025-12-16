@@ -171,30 +171,251 @@
             .semester-card {
                 width: 80%;
                 left: 50px !important;
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&family=Roboto:wght@300;400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a001f, #1a0033, #000000);
+            min-height: 100vh;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #e0e0ff;
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            z-index: 10;
+        }
+
+        header h1 {
+            font-size: 3.8rem;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 800;
+            background: linear-gradient(90deg, #00ffff, #ff00ff, #00ff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            letter-spacing: 6px;
+        }
+
+        header h2 {
+            font-size: 2rem;
+            font-family: 'Exo 2', sans-serif;
+            color: #ff00ff;
+            text-shadow: 0 0 15px #ff00ff;
+            margin: 15px 0;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            color: #b0b0ff;
+            max-width: 800px;
+            margin: 20px auto;
+            opacity: 0.85;
+        }
+
+        .book-bank-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.6), 0 0 50px rgba(0, 255, 255, 0.4);
+            transition: all 0.5s ease;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 30px rgba(255, 0, 255, 0.6), 0 0 50px rgba(0, 255, 255, 0.4); }
+            50% { box-shadow: 0 0 50px rgba(255, 0, 255, 0.8), 0 0 70px rgba(0, 255, 255, 0.6); }
+            100% { box-shadow: 0 0 30px rgba(255, 0, 255, 0.6), 0 0 50px rgba(0, 255, 255, 0.4); }
+        }
+
+        .book-bank-btn:hover {
+            transform: scale(1.2) rotate(360deg);
+            box-shadow: 0 0 60px #ff00ff, 0 0 80px #00ffff;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            width: 100%;
+            padding: 50px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            height: 100%;
+            width: 8px;
+            background: linear-gradient(to bottom, #00ffff, #ff00ff, #00ff00, #ff00ff);
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff;
+            border-radius: 4px;
+            animation: flow 8s linear infinite;
+        }
+
+        @keyframes flow {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 100%; }
+        }
+
+        .semester-card {
+            position: relative;
+            width: 45%;
+            margin: 60px 0;
+            padding: 35px;
+            background: rgba(20, 10, 40, 0.5);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(0, 255, 255, 0.4);
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+        }
+
+        .semester-card:nth-child(odd) {
+            left: 55%;
+        }
+
+        .semester-card:nth-child(even) {
+            left: 5%;
+        }
+
+        .semester-card:hover {
+            transform: translateY(-20px) scale(1.08);
+            background: rgba(40, 20, 80, 0.7);
+            border: 2px solid #ff00ff;
+            box-shadow: 0 25px 50px rgba(255, 0, 255, 0.4), 0 0 50px #00ffff;
+        }
+
+        .semester-card h2 {
+            font-size: 2rem;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 600;
+            color: #00ffff;
+            text-shadow: 0 0 15px #00ffff;
+            margin-bottom: 20px;
+        }
+
+        .semester-card p {
+            font-size: 1.15rem;
+            color: #e0e0ff;
+            line-height: 1.7;
+        }
+
+        .semester-card::before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 0 30px #ff00ff, 0 0 50px #00ffff;
+            transition: all 0.5s ease;
+            z-index: 2;
+        }
+
+        .semester-card:nth-child(odd)::before {
+            left: -54px;
+        }
+
+        .semester-card:nth-child(even)::before {
+            right: -54px;
+        }
+
+        .semester-card:hover::before {
+            transform: translateY(-50%) scale(1.4);
+            box-shadow: 0 0 60px #ff00ff, 0 0 80px #00ffff;
+        }
+
+        .semester-card::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 6px;
+            background: linear-gradient(to right, #00ffff, #ff00ff);
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 0 15px #00ffff;
+            transition: all 0.5s ease;
+        }
+
+        .semester-card:nth-child(odd)::after {
+            left: -80px;
+        }
+
+        .semester-card:nth-child(even)::after {
+            right: -80px;
+        }
+
+        .semester-card:hover::after {
+            width: 100px;
+            box-shadow: 0 0 25px #ff00ff;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 40px;
+            }
+
+            .semester-card {
+                width: 80%;
+                left: 80px !important;
+                padding: 25px;
+                margin: 40px 0;
             }
 
             .semester-card::before {
-                left: -30px !important;
+                left: -54px !important;
             }
 
             .semester-card::after {
-                left: -50px !important;
+                left: -80px !important;
                 right: auto !important;
             }
 
             header h1 {
-                font-size: 2rem;
+                font-size: 2.8rem;
+                letter-spacing: 3px;
             }
 
-            header p {
-                font-size: 1rem;
+            header h2 {
+                font-size: 1.6rem;
             }
 
             .book-bank-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 0.9rem;
-                top: 10px; /* Adjusted for smaller screens */
+                width: 70px;
+                height: 70px;
+                top: 10px;
+                right: 10px;
             }
         }
     </style>
